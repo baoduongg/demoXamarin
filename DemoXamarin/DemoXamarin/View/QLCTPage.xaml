@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage  xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DemoXamarin.View.QLCTPage">
+   <StackLayout Margin="0,15,0,0">
+        <!-- Place new controls here -->
+
+        <Entry Text="{Binding Title}" Placeholder="Noi dung" />
+        <DatePicker Date="{Binding Date,Mode=TwoWay}"/>
+        <Entry Text="{Binding Money}" Keyboard="Numeric" Placeholder="So tien"/>
+     
+        <Grid HeightRequest="70">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Add" Grid.Column="0" Command="{Binding BtnCommand}"/>
+            <Button Text="Sum" Grid.Column="1" Command="{Binding CountMoney}"/>
+            <Button Text="Edit" Grid.Column="2" Command="{Binding UpdateMoneyCommand}" InputTransparent="{Binding UnSelected}"/>
+            <Button Text="Delete" Grid.Column="3" Command="{Binding DeleteMoneyCommand}"  InputTransparent="{Binding UnSelected}"/>
+        </Grid>
+        <ListView
+            ItemsSource="{Binding Data}"
+            RefreshCommand="{Binding RefreshList}"
+            IsPullToRefreshEnabled="True"
+            IsRefreshing="{Binding IsRefresing}"
+            ItemSelected="ListView_ItemSelected"
+            SelectedItem="{Binding SelectedItem}"
+            SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}" Detail="{Binding Money}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

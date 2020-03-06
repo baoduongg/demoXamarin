@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DemoXamarin"
+    x:Class="DemoXamarin.HomePage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="MasterPage">
+            <StackLayout>
+                <Button Text="MainPage" Command="{Binding OnNavigateCommand}" CommandParameter="MainPage"/>
+                <Button Text="QLCT" Command="{Binding OnNavigateCommand}" CommandParameter="QLCTPage"/>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <local:MainPage/>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

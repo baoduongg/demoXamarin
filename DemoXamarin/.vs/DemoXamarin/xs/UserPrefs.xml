@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{C277D681-FA24-4FE5-87E0-B18FC6F3D18B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DemoXamarin/HomePage.xaml">
+    <Files>
+      <File FileName="DemoXamarin/Models/MoneyModel.cs" Line="12" Column="1" />
+      <File FileName="DemoXamarin/Services/FireBaseService.cs" />
+      <File FileName="DemoXamarin/View/QLCTPage.xaml" Line="38" Column="1" />
+      <File FileName="DemoXamarin/View/QLCTPage.xaml.cs" Line="9" Column="6" />
+      <File FileName="DemoXamarin/ViewModel/QLCTPageViewModel.cs" Line="17" Column="36" />
+      <File FileName="DemoXamarin/App.xaml" Line="5" Column="26" />
+      <File FileName="DemoXamarin/App.xaml.cs" Line="22" Column="84" />
+      <File FileName="DemoXamarin/ViewModel/HomePageViewModel.cs" Line="1" Column="1" />
+      <File FileName="DemoXamarin/HomePage.xaml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DemoXamarin" expanded="True">
+            <Node name="DemoXamarin" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="QLCTPage.xaml" expanded="True" />
+              </Node>
+              <Node name="ViewModel" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+              <Node name="HomePage.xaml" expanded="True" selected="True" />
+            </Node>
+            <Node name="DemoXamarin.Android" expanded="True" />
+            <Node name="DemoXamarin.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.DemoXamarin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.067B19DF-0CA8-49D9-8679-BE5D901D5274" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.DemoXamarin.Android FirstBuild="True" PreferredExecutionTarget="Android.SelectDevice" />
+</Properties>
