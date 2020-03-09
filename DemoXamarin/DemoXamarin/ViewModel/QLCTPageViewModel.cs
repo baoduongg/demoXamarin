@@ -14,6 +14,7 @@ namespace DemoXamarin.ViewModel
         private readonly FireBaseService _firebaseService = new FireBaseService();
         public QLCTPageViewModel()
         {
+           
             RefreshCommandExcute();
         }
 
@@ -44,13 +45,33 @@ namespace DemoXamarin.ViewModel
         public DateTime Date
         {
             get => _date;
-            set => SetProperty(ref _date, value);
+            set  {
+                SetProperty(ref _date, value);
+                OnPropertyChanged(_date);
+                 }
+        }
+
+        private void OnPropertyChanged(DateTime date)
+        {
+            LbPicker = date.ToShortDateString();
+        }
+
+        public object MyProperty
+        {
+            get;
+            private set;
         }
         private string _money;
         public string Money
         {
             get => _money;
             set => SetProperty(ref _money, value);
+        }
+        private string _lbPicker = DateTime.Now.ToShortDateString();
+        public string LbPicker
+        {
+            get => _lbPicker;
+            set => SetProperty(ref _lbPicker, value);
         }
         private ObservableCollection<MoneyModel> _data = new ObservableCollection<MoneyModel>();
         public ObservableCollection<MoneyModel> Data
@@ -101,8 +122,8 @@ namespace DemoXamarin.ViewModel
             try
             {
                 await _firebaseService.UpdateMoney(Date, Money, Title, Key);
-                await Application.Current.MainPage.DisplayAlert("Thong bao", $"Edit Thanh cong", "Ok");
                 RefreshCommandExcute();
+                await Application.Current.MainPage.DisplayAlert("Thong bao", $"Edit Thanh cong", "Ok");
             }
             catch (Exception ex)
             {
@@ -116,8 +137,8 @@ namespace DemoXamarin.ViewModel
             try
             {
                 await _firebaseService.DeleteMoney(Key);
-                await Application.Current.MainPage.DisplayAlert("Thong bao", $"Xoa Thanh cong", "Ok");
                 RefreshCommandExcute();
+                await Application.Current.MainPage.DisplayAlert("Thong bao", $"Xoa Thanh cong", "Ok");
             }
             catch (Exception ex)
             {
@@ -140,8 +161,8 @@ namespace DemoXamarin.ViewModel
                 try
                 {
                     await _firebaseService.AddMoney(Date, Money, Title);
-                    await Application.Current.MainPage.DisplayAlert("Thong bao", $"Them Thanh cong", "Ok");
                     RefreshCommandExcute();
+                    await Application.Current.MainPage.DisplayAlert("Thong bao", $"Them Thanh cong", "Ok");
                 }
                 catch (Exception ex)
                 {
@@ -155,14 +176,15 @@ namespace DemoXamarin.ViewModel
         }
         private async void RefreshCommandExcute()
         {
-            IsRefresing = true;
+           // IsRefresing = true;
             Title = string.Empty;
             Money = string.Empty;
+            LbPicker = string.Empty;
             UnSelected = true;
             WithPeople = string.Empty;
             ResetData();
-            IsRefresing = false;
+            //IsRefresing = false;
         }
-
+      
     }
 }

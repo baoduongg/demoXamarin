@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage  xmlns:prism="http://prismlibrary.com"
     prism:ViewModelLocator.AutowireViewModel="True" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DemoXamarin.View.QLCTPage">
-   <StackLayout Margin="0,15,0,0">
-        <!-- Place new controls here -->
-
-        <Entry Text="{Binding Title}" Placeholder="Noi dung" />
-        <DatePicker Date="{Binding Date,Mode=TwoWay}"/>
+    <StackLayout Margin="0,15,0,0">
+        <Entry Text="{Binding Title}" Placeholder="Noi dung"  />
+        <Grid>
+            <DatePicker x:Name="datepicker"   Date="{Binding Date,Mode=TwoWay}" />
+            <Entry x:Name="lbldatepicker" InputTransparent="True"  Placeholder="Thoi gian" Text="{Binding LbPicker}"/>
+        </Grid>
         <Entry Text="{Binding Money}" Keyboard="Numeric" Placeholder="So tien"/>
-     
+
         <Grid HeightRequest="70">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
