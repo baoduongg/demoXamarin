@@ -20,4 +20,5 @@ namespace DemoXamarin.ViewModel
             await _navigationService.NavigateAsync(new Uri(obj, UriKind.Relative));
         }
     }
+    
 }

@@ -17,5 +17,7 @@ namespace DemoXamarin.View
         {
             ViewModel.SelectedItemExcute(e);
         }
+
+     
     }
 }
